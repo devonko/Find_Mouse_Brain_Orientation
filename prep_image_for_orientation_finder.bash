@@ -28,4 +28,11 @@ rm ${prefix}1Translation.mat;
 
 translation=${prefix}0DerivedInitialMovingTranslation.mat;
 
-antsApplyTransforms -v 1 -d 3  -i ${reset_img} -r ${ref} -n Linear  -o ${output} -t ${translation}
+antsApplyTransforms -v 1 -d 3  -i ${reset_img} -r ${ref} -n Linear  -o ${output} -t ${translation};
+
+# Cleanup intermediate files...
+
+if [[ -f ${output} ]];then
+	rm "${work_dir}/${input_file/\.nii/_reset\.nii\.gz}";
+	rm ${translation};
+fi
