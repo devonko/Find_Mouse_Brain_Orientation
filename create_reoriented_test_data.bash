@@ -1,7 +1,6 @@
 #! /bin/env bash
 image=$1;
-out_code=$2;
-output_dir=$3;
+output_dir=$2;
 if [[ ${image:0:1} != '/' ]];then
         file_name=$image;
         folder=$PWD;
