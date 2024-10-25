@@ -60,5 +60,7 @@ for out_code in ${out_codes[@]}; do
             RO_cmd="bash /mnt/clustertmp/common/rja20_dev//matlab_execs_for_SAMBA//img_transform_executable/run_img_transform_exec.sh /mnt/clustertmp/common/rja20_dev//MATLAB2015b_runtime/v90 ${image} ${in_code} ${out_code} ${out_image}";
 			job_name=reorient_${file_name%%_*}_${out_code};
 			cmd="${GD}submit_sge_cluster_job.bash ${sbatch_dir} ${job_name} 0 0 ${RO_cmd}";
+			echo $cmd;
+			$cmd;
         fi
 done
