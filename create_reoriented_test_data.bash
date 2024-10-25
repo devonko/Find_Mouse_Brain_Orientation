@@ -13,7 +13,13 @@ if [[ ! -d ${output_dir} ]]; then
         mkdir -m 775 ${output_dir};
 fi
 
-in_code=LAS;
+sbatch_dir=${output_dir}/sbatch;
+
+if [[ ! -d ${sbatch_dir} ]]; then
+        mkdir -m 775 ${sbatch_dir};
+fi
+GD=/mnt/clustertmp/common/rja20_dev/gunnies/;
+in_code=ALS;
 
 out_codes=();
 RHS=(ALS PRS ARI PLI RAS LPS LAI RPI SAL SPR IAR IPL SRA SLP ILA IRP LSA RSP RIA LIP ASR PSL AIL PIR);
@@ -51,6 +57,8 @@ fi
 for out_code in ${out_codes[@]}; do
         out_image=${output_dir}/${file_name%.nii???}_${out_code}.nii.gz;
         if [[ ! -f ${out_image} ]]; then
-                bash /mnt/clustertmp/common/rja20_dev//matlab_execs_for_SAMBA//img_transform_executable/run_img_transform_exec.sh /mnt/clustertmp/common/rja20_dev//MATLAB2015b_runtime/v90 ${input} ${in_code} ${out_code} ${out_image};
+            RO_cmd="bash /mnt/clustertmp/common/rja20_dev//matlab_execs_for_SAMBA//img_transform_executable/run_img_transform_exec.sh /mnt/clustertmp/common/rja20_dev//MATLAB2015b_runtime/v90 ${image} ${in_code} ${out_code} ${out_image}";
+			job_name=reorient_${file_name%%_*}_${out_code};
+			cmd="${GD}submit_sge_cluster_job.bash ${sbatch_dir} ${job_name} 0 0 ${RO_cmd}";
         fi
 done
