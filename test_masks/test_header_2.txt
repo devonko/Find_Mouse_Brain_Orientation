@@ -1,0 +1,77 @@
+ Spacing [0.208333, 0.208333, 0.208333]
+ Origin [9.79167, 9.79167, -9.79167]
+ Direction 
+-1 0 0
+0 -1 0
+0 0 1
+
+ Size : 96 96  96
+
+  Image Dimensions   : [96, 96, 96]
+  Bounding Box       : {[9.79167 9.79167 -9.79167], [29.7917 29.7917 10.2083]}
+  Voxel Spacing      : [0.208333, 0.208333, 0.208333]
+  Intensity Range    : [0, 1]
+  Mean Intensity     : 0.061086
+  Direction Cos Mtx. : 
+-1 0 0
+0 -1 0
+0 0 1
+
+  Voxel->RAS x-form  : 
+  Image Metadata: 
+    ITK_FileNotes = 6.0.3:b862cdd5
+    ITK_original_direction of unsupported type N3itk6MatrixIdLj3ELj3EEE
+    ITK_original_spacing of unsupported type St6vectorIdSaIdEE
+    ITK_sform_corrected = NO
+    aux_file = none
+    bitpix = 8
+    cal_max = 0
+    cal_min = 0
+    datatype = 2
+    descrip = 6.0.3:b862cdd5
+    dim[0] = 3
+    dim[1] = 96
+    dim[2] = 96
+    dim[3] = 96
+    dim[4] = 1
+    dim[5] = 1
+    dim[6] = 1
+    dim[7] = 1
+    dim_info = 0
+    intent_code = 0
+    intent_p1 = 0
+    intent_p2 = 0
+    intent_p3 = 0
+    nifti_type = 1
+    pixdim[0] = 0
+    pixdim[1] = 0.208333
+    pixdim[2] = 0.208333
+    pixdim[3] = 0.208333
+    pixdim[4] = 1
+    pixdim[5] = 1
+    pixdim[6] = 1
+    pixdim[7] = 1
+    qfac = 0
+    qform_code = 0
+    qform_code_name = NIFTI_XFORM_UNKNOWN
+    qoffset_x = 0
+    qoffset_y = 0
+    qoffset_z = 0
+    qto_xyz of unsupported type N3itk6MatrixIfLj4ELj4EEE
+    quatern_b = 0
+    quatern_c = 0
+    quatern_d = 0
+    scl_inter = 0
+    scl_slope = 1
+    sform_code = 1
+    sform_code_name = NIFTI_XFORM_SCANNER_ANAT
+    slice_code = 0
+    slice_duration = 0
+    slice_end = 0
+    slice_start = 0
+    srow_x = 0.208333 0 0 -9.79167
+    srow_y = 0 0.208333 0 -9.79167
+    srow_z = 0 0 0.208333 -9.79167
+    toffset = 0
+    vox_offset = 352
+    xyzt_units = 10
