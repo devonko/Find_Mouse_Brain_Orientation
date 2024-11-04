@@ -20,5 +20,6 @@ od2 = testing script. Pulls all exams, prints predictions. Kind of clunky, but d
 Although the train/validate accuracy is set to save after 3 iterations (not absolutely in a row, but three times), the test data has several errors, resulting in an error rate of 0.38% currently. 
 This is using a train/validate/test split of 40/40/20. The 20% test group is composed of whole exams (testing all 24 orientation categories). See csv mastersheet for details.
 The 40/40 train/validate dataset is NOT set to model on whole exams. If the train/validate was more explicitly differentiated on an exam basis, I suppose the model would improve on the test group.
+Also, acutal images vs. masks may provide the features needed to improve differentiation.
 
 
