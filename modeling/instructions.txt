@@ -1,0 +1,24 @@
+#### created by Devon Overson, Nov 2024, email at devonko@gmail.com
+The model should work quite well "out of the box" on the masks provided. Further refinements can be made and some comments are found at the end of this file.
+
+Instructions for use (out-of-box):
+1. Ensure that file paths are set as desired for the following files:
+  a. predict_orientation.sh
+  b. tf_orientation_template.py (check to ensure image mask path, model path/id, path and supporting files are routed correctly)
+  c. label_mapping.csv (this is merely a dictionary import, assigning classifications to numeric values (e.g., AIL -> 0) )
+
+2. In terminal, run predict_orientation.sh, with the second argument being the exam mask under question (e.g., qsub -l h_vmem=64G predict_orientation.sh M22090514_dwi_mask_OF_prepped_AIL.nii.gz)
+
+3. The script will print the prediction and save the prediction to a csv file. This can be changed per scaleability requirements.
+
+Context into modeling:
+The masks are modeled in tensorflow using 3 separate scripts:
+od0 = matlab script (I guess I could have written in python...) cropping and resampling masks. This might be out of scope with what you'd like (esp. regarding cropping), so it can be adjusted as needed.
+od1 = model script. Lot going on, but hopefully what I'm doing is clear. I've left some comments in script, see me if questions.
+od2 = testing script. Pulls all exams, prints predictions. Kind of clunky, but decided to leave as-is and move on.
+
+Although the train/validate accuracy is set to save after 3 iterations (not absolutely in a row, but three times), the test data has several errors, resulting in an error rate of 0.38% currently. 
+This is using a train/validate/test split of 40/40/20. The 20% test group is composed of whole exams (testing all 24 orientation categories). See csv mastersheet for details.
+The 40/40 train/validate dataset is NOT set to model on whole exams. If the train/validate was more explicitly differentiated on an exam basis, I suppose the model would improve on the test group.
+
+
