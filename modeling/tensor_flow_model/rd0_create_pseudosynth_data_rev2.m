@@ -1,4 +1,3 @@
-%% This script is for creating some "fake" brain mask data to test on 
 %%%% created by Devon Overson, Nov 2024, email at devonko@gmail.com
 
 close all
